@@ -4,23 +4,24 @@ const app = express();
 const FoodItem = require('./food.js');
 
 
-async function getRecommendation() {
+async function getRecommendation(input) {
     const heroku_url = 'https://profit-food-recommendation.herokuapp.com/'
     const results = [];
 
 
-    var input = {
-        'Diet': ['high_protien_diet', 'gluten_free_diet'],
-        'Disease': ['diabeties', 'anemia'],
-        'Nutirent': ['calcium', 'protien']
-    };
+    // var input = {
+    //     'Diet': ['high_protien_diet', 'low_fat_diet'],
+    //     'Disease': ['anemia', 'cancer'],
+    //     'Nutirent': ['vitamin_c', 'protien']
+    // };
     input = JSON.stringify(input);
+    console.log("input: " + input);
 
     //send post request to heroku server using fetch
     const response = await fetch(heroku_url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json',
         },
         body: input,
     });
@@ -31,9 +32,8 @@ async function getRecommendation() {
         results.push(data[i]);
 
     }
-    //   console.log(results);
 
-    //   console.log(results);
+    console.log(results);
 
 
     return results;

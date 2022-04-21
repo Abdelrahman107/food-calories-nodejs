@@ -9,15 +9,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-
-
-
-
-
-// for(let i = 0; i < queries.length; i++){
-//    console.log(queries[i]);
-// }
-
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!');
 
@@ -32,19 +23,19 @@ app.listen(3000, () => {
 
 
 
-app.get('/', async(req , res) => {
-    results = await getRecommendation();
+// app.get('/', async(req , res) => {
+//     results = await getRecommendation();
+//     finalFoodItems = await getCalories(results);
+//     console.log(finalFoodItems);
+//     res.send(finalFoodItems);
+// })
+
+app.post('/', async (req, res) => {
+    console.log("request body" + req.body);
+    results = await getRecommendation(req.body);
     finalFoodItems = await getCalories(results);
-    console.log(finalFoodItems);
     res.send(finalFoodItems);
 })
-
-// app.post('/', async (req, res) => {
-//     console.log("request body" + req.body);
-//     results = await getRecommendation(req.body);
-//     finalFoodItems = await getCalories(results);
-//     res.send(finalFoodItems);
-// });
 
 
 

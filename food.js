@@ -24,16 +24,7 @@ class FoodItem {
 
     // }
 
-    //add setters and getters
-
-    // get name() {
-    //     return this.name;
-    // }
-
-    // set name(value) {
-
-    //     this.name = value;
-    // }
+   
 
     updateCalories(length) {
         this.calories = (this.calories / length) * 1.3;
@@ -44,14 +35,7 @@ class FoodItem {
     updateServingSize(num) {
         this.serving_size_g = 100;
     }
-    // get serving_size_g() {
-    //     return this.serving_size_g;
-    // }
-
-    // set serving_size_g(value) {
-    //     this.serving_size_g = value;
-    // }
-
+    
 }
 
 
