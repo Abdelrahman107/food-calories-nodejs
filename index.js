@@ -1,7 +1,7 @@
 const express = require('express');
-const fetch = require('node-fetch');
 const app = express();
 const bodyParser = require('body-parser');
+const PORT = process.env.PORT ||3000;
 
 const { getRecommendation, getCalories } = require('./app.js');
 
@@ -9,8 +9,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.listen(3000, () => {
-    console.log('Example app listening on port 3000!');
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}!`);
 
 });
 
