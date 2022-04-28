@@ -85,6 +85,14 @@ async function getCalories(query) {
 }
 
 
+//export getresults and getrecommendation functions
+module.exports = {
+    getRecommendation,
+    getCalories
+}
+
+
+
 // //1st way
 // (async () => {
 //     console.log(await getRecommendation());
@@ -102,9 +110,3 @@ async function getCalories(query) {
 
 //     getFood();
 // });
-
-//export getresults and getrecommendation functions
-module.exports = {
-    getRecommendation,
-    getCalories
-}
